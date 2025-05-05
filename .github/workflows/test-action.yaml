@@ -13,8 +13,8 @@ jobs:
           ssh_password: ${{ secrets.SSH_PASSWORD }}
           env_vars: "MY_SECRET,APP_ENV=production,DB_HOST=localhost"
           script: |
-            echo "Secret: $MY_SECRET"
-            echo "Environment: $APP_ENV"
-            echo "Database: $DB_HOST"
+            echo "Writing to test-action/test.txt"
+            mkdir -p test-action
+            echo "Hello, world!" > test-action/test.txt
         env:
           MY_SECRET: ${{ secrets.MY_SECRET }}
