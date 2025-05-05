@@ -7,11 +7,11 @@ jobs:
       - uses: actions/checkout@v3
       - uses: SerheyJankowsky/ssh-action@v1
         with:
-          ssh-host: ${{ secrets.SSH_HOST }}
-          ssh-user: ${{ secrets.SSH_USER }}
+          ssh_host: ${{ secrets.SSH_HOST }}
+          ssh_user: ${{ secrets.SSH_USER }}
           # ssh-port: ${{ secrets.SSH_PORT }}
-          ssh-password: ${{ secrets.SSH_PASSWORD }}
-          env-vars: "MY_SECRET,APP_ENV=production,DB_HOST=localhost"
+          ssh_password: ${{ secrets.SSH_PASSWORD }}
+          env_vars: "MY_SECRET,APP_ENV=production,DB_HOST=localhost"
           script: |
             echo "Secret: $MY_SECRET"
             echo "Environment: $APP_ENV"
